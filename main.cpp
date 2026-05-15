@@ -1,44 +1,26 @@
+
 #include <iostream>
+#include <cassert>
+#include <cstring>
 #include <vector>
-#include <sstream>
-#include <exception>
-#include <fstream>
-#include <list>
-#include "html.h"
-
-#include "Blocco.h"
-
-void parsehtml(std::ifstream &file,std::list<html> & lista) {
-
-        char c ;
-        file >> c;
-        if (c!='<') return;
-        file.putback(c);
-
-        while (!file.eof()) {
-                std::string v,k,l;
-                getline(file,v,'>');
-                getline(file,k,'<');
-                getline(file,l,'>');
-                lista.push_back({"",k,""});
-
-
-        }
+#include "SD.h"
+#include "lista_1.h"
 
 
 
+int main()
+{
+    lista_1<int> s=lista_1<int>();
+    s.push_front(1);
+    s.push_front(2);
+    s.push_front(3);
+    s.push_front(4);
+    s.push_front(5);
+    s.Print();
+    std::cout<<"\n";
+    std::cout <<s.getBack(5);
 
-}
 
-
-int main() {
-        std::ifstream f("/Users/hamza/Desktop/cpp/test.txt");
-        std::list<html> lista;
-        if (!f.is_open()) return 1;
-        parsehtml(f,lista);
-         for (auto e :lista) {
-                 std::cout <<  "--" << e.getk()  << std::endl;
-         }
-        f.close();
+    return 0;
 
 }
