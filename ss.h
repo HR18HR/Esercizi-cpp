@@ -11,6 +11,8 @@ class Nodo_1 {
 public:
     Nodo_1(T x) {
         this->value=x;
+        this->next=NULL;
+        this->back=NULL;
     }
     T getValue() {
         return this->value;
@@ -32,7 +34,7 @@ public:
 
 private:
     T value;
-    Nodo_1<T>* next=nullptr;
-    Nodo_1<T>* back=nullptr;
+    Nodo_1<T>* next;
+    Nodo_1<T>* back;
 };
 #endif //UNTITLED_SS_H

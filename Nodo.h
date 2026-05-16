@@ -11,6 +11,7 @@ class Nodo {
         public:
         Nodo(T value) {
             this->value = value;
+            this->next = NULL;
         };
 
         void setNext(Nodo<T> *nodo) {
@@ -26,7 +27,7 @@ class Nodo {
 
     private:
         T value;
-        Nodo<T> *next=NULL;
+        Nodo<T> *next;
     };
 
 
